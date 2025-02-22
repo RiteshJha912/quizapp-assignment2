@@ -55,7 +55,7 @@
 .submitButton {
     padding: 10px 15px;
     font-size: 16px;
-    background: #28a745;
+    background: #6a5acd;
     color: white;
     border: none;
     border-radius: 6px;
@@ -64,8 +64,9 @@
 }
 
 .submitButton:hover {
-    background: #218838;
+    background: #6a5acd;
 }
+
 
 /* Responsive Design */
 @media (max-width: 600px) {

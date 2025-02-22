@@ -9,6 +9,9 @@ function Home() {
         <Link to='/quiz'>
           <button className={styles.button}>Start Quiz</button>
         </Link>
+        <Link to='/results'>
+          <button className={styles.button}>Past Scores</button>
+        </Link>
       </div>
     </div>
   )

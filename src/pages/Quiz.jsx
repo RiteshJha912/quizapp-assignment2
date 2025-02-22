@@ -1,9 +1,8 @@
-//src/pages/Quiz.jsx
-
 import React, { useEffect, useState } from 'react'
 import Question from '../components/Question'
 import Timer from '../components/Timer'
 import QuizResult from '../components/QuizResult'
+import ProgressBar from '../components/ProgressBar'
 import { saveQuizResult } from '../utils/db'
 import styles from '../styles/Quiz.module.css'
 
@@ -13,6 +12,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0)
   const [quizCompleted, setQuizCompleted] = useState(false)
   const [userInput, setUserInput] = useState('')
+  const [quizStarted, setQuizStarted] = useState(false)
 
   useEffect(() => {
     async function fetchQuestions() {
@@ -58,10 +58,31 @@ const Quiz = () => {
     return <QuizResult score={score} total={questions.length} />
   }
 
+  if (!quizStarted) {
+    return (
+      <div className={styles.rulesContainer}>
+        <h2>Quiz Rules</h2>
+        <ul className={styles.rulesList}>
+          <li>You have limited time for each question.</li>
+          <li>Once you submit an answer, you can't go back.</li>
+          <li>Each correct answer gives you 1 point.</li>
+          <li>If time runs out, you lose the chance to answer.</li>
+        </ul>
+        <button
+          className={styles.startButton}
+          onClick={() => setQuizStarted(true)}
+        >
+          Start Quiz
+        </button>
+      </div>
+    )
+  }
+
   return (
     <div className={styles.quizContainer}>
       {questions.length > 0 ? (
         <>
+          <ProgressBar progress={(currentIndex / questions.length) * 100} />
           <Timer
             key={currentIndex}
             duration={questions[currentIndex]?.time || 30}

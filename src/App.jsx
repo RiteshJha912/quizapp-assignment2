@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify' // Import ToastContainer
-import 'react-toastify/dist/ReactToastify.css' // Import toast styles
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { AiOutlineHome } from 'react-icons/ai' // Import Home icon
 import Home from './pages/Home'
 import Quiz from './pages/Quiz'
 import Results from './pages/Results'
@@ -9,16 +10,10 @@ import styles from './styles/App.module.css'
 function App() {
   return (
     <Router>
-      <nav className={styles.navbar}>
-        <div className={styles.navContainer}>
-          <Link to='/' className={styles.navLink}>
-            Home
-          </Link>
-          <Link to='/results' className={styles.navLink}>
-            Past Scores
-          </Link>
-        </div>
-      </nav>
+      {/* Home button always visible in the top left corner */}
+      <Link to='/' className={styles.homeButton}>
+        <AiOutlineHome size={30} />
+      </Link>
 
       <div className={styles.pageContent}>
         <Routes>
@@ -28,7 +23,6 @@ function App() {
         </Routes>
       </div>
 
-      {/* Add the ToastContainer to display toast notifications */}
       <ToastContainer position='top-center' autoClose={3000} />
     </Router>
   )

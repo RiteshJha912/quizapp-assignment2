@@ -1,5 +1,5 @@
 import React from 'react'
-import { toast } from 'react-toastify' // Import toast
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from '../styles/Question.module.css'
 
@@ -33,7 +33,7 @@ const Question = ({ question, onAnswer, userInput, setUserInput }) => {
           <input
             type='number'
             className={styles.inputBox}
-            placeholder='' // ✅ Added placeholder
+            placeholder=''
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
