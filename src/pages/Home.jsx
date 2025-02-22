@@ -1,15 +1,16 @@
+import styles from '../styles/Home.module.css'
 import { Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to the Quiz</h1>
-      <div style={{ display: 'flex', gap: '10px' }}>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Welcome to the Quiz</h1>
+      <div className={styles.buttonGroup}>
         <Link to='/quiz'>
-          <button>Start Quiz</button>
+          <button className={styles.button}>Start Quiz</button>
         </Link>
         <Link to='/results'>
-          <button>View Score</button>
+          <button className={styles.button}>View Score</button>
         </Link>
       </div>
     </div>

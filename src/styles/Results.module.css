@@ -1,0 +1,24 @@
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.score {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.restartButton {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.restartButton:hover {
+    background-color: darkgreen;
+}
