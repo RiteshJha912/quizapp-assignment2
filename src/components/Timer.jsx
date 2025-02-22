@@ -1,3 +1,4 @@
+//src/components/Timer.jsx
 import { useEffect, useState } from 'react'
 import styles from '../styles/Timer.module.css'
 

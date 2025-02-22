@@ -1,25 +1,42 @@
-import { openDB } from 'idb'
+export const openDB = () => {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('QuizDB', 1)
 
-const DB_NAME = 'quizDB'
-const STORE_NAME = 'quizHistory'
-
-// Open IndexedDB database
-const dbPromise = openDB(DB_NAME, 1, {
-  upgrade(db) {
-    if (!db.objectStoreNames.contains(STORE_NAME)) {
-      db.createObjectStore(STORE_NAME, { keyPath: 'id', autoIncrement: true })
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result
+      if (!db.objectStoreNames.contains('quizResults')) {
+        db.createObjectStore('quizResults', {
+          keyPath: 'id',
+          autoIncrement: true,
+        })
+      }
     }
-  },
-})
 
-// Function to save quiz result
-export const saveQuizResult = async (result) => {
-  const db = await dbPromise
-  await db.add(STORE_NAME, result)
+    request.onsuccess = () => resolve(request.result)
+    request.onerror = () => reject('Failed to open IndexedDB')
+  })
 }
 
-// Function to get all past quiz results
+// Save quiz attempt
+export const saveQuizResult = async (score, total) => {
+  const db = await openDB()
+  const tx = db.transaction('quizResults', 'readwrite')
+  const store = tx.objectStore('quizResults')
+
+  const result = { score, total, date: new Date().toISOString() }
+  store.add(result)
+
+  return tx.complete
+}
+
+// Fetch all quiz attempts
 export const getQuizHistory = async () => {
-  const db = await dbPromise
-  return await db.getAll(STORE_NAME)
+  const db = await openDB()
+  const tx = db.transaction('quizResults', 'readonly')
+  const store = tx.objectStore('quizResults')
+
+  return new Promise((resolve) => {
+    const request = store.getAll()
+    request.onsuccess = () => resolve(request.result || [])
+  })
 }

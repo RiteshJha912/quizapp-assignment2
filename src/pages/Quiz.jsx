@@ -1,59 +1,81 @@
-import { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Question from '../components/Question'
+import Timer from '../components/Timer'
+import QuizResult from '../components/QuizResult'
+import { saveQuizResult } from '../utils/db'
 
-function Quiz() {
+const Quiz = () => {
   const [questions, setQuestions] = useState([])
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
   const [score, setScore] = useState(0)
-  const [isCompleted, setIsCompleted] = useState(false)
+  const [quizCompleted, setQuizCompleted] = useState(false)
+  const [userInput, setUserInput] = useState('')
 
   useEffect(() => {
     async function fetchQuestions() {
       try {
-        const response = await fetch('/data/questions.json') // Correct path
-        if (!response.ok) {
-          throw new Error('Failed to fetch questions')
-        }
+        const response = await fetch('/data/questions.json')
         const data = await response.json()
         setQuestions(data)
       } catch (error) {
-        console.error('Error:', error)
+        console.error('Error loading questions:', error)
       }
     }
     fetchQuestions()
   }, [])
 
+  // ✅ Reset input field when a new question is loaded
+  useEffect(() => {
+    setUserInput('')
+  }, [currentIndex]) // Runs every time currentIndex changes
 
-  if (questions.length === 0) return <p>Loading questions...</p>
+  const handleAnswer = (questionId, userAnswer) => {
+    const currentQuestion = questions[currentIndex]
+    if (!currentQuestion) return
 
-  const handleAnswer = (index) => {
-    if (questions[currentQuestion].answer === index) {
-      setScore(score + 1)
-    }
-    if (currentQuestion + 1 < questions.length) {
-      setCurrentQuestion(currentQuestion + 1)
+    const isCorrect =
+      currentQuestion.type === 'mcq'
+        ? userAnswer === currentQuestion.correctAnswer
+        : userAnswer === currentQuestion.correctAnswer.toString()
+
+    if (isCorrect) setScore((prev) => prev + 1)
+
+    if (currentIndex < questions.length - 1) {
+      setCurrentIndex((prev) => prev + 1)
     } else {
-      setIsCompleted(true)
+      setQuizCompleted(true)
+      saveQuizResult(score + (isCorrect ? 1 : 0), questions.length)
     }
+  }
+
+  // Handle timeout when time runs out
+  const handleTimeout = () => {
+    handleAnswer(questions[currentIndex]?.id, null) // Auto-submit as incorrect
+  }
+
+  if (quizCompleted) {
+    return <QuizResult score={score} total={questions.length} />
   }
 
   return (
     <div className='quiz-container'>
-      {isCompleted ? (
-        <h2>
-          Your final score: {score}/{questions.length}
-        </h2>
-      ) : (
+      {questions.length > 0 ? (
         <>
-          <h2>{questions[currentQuestion].question}</h2>
-          <ul>
-            {questions[currentQuestion].options.map((option, index) => (
-              <li key={index} onClick={() => handleAnswer(index)}>
-                {option}
-              </li>
-            ))}
-          </ul>
+          {/* ✅ Key forces re-mount when currentIndex changes */}
+          <Timer
+            key={currentIndex}
+            duration={questions[currentIndex]?.time || 30}
+            onTimeout={handleTimeout}
+          />
+          <Question
+            question={questions[currentIndex]}
+            onAnswer={handleAnswer}
+            userInput={userInput}
+            setUserInput={setUserInput}
+          />
         </>
+      ) : (
+        <p>Loading...</p>
       )}
     </div>
   )

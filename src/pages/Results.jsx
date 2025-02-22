@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getQuizHistory } from '../utils/db'
+import { Link } from 'react-router-dom'
 
 function Results() {
   const [quizHistory, setQuizHistory] = useState([])
@@ -7,7 +8,7 @@ function Results() {
   useEffect(() => {
     async function fetchHistory() {
       const history = await getQuizHistory()
-      setQuizHistory(history.reverse()) // Show the latest attempt first
+      setQuizHistory(history.reverse()) // Show latest attempt first
     }
     fetchHistory()
   }, [])
@@ -22,14 +23,16 @@ function Results() {
         <ul>
           {quizHistory.map((attempt, index) => (
             <li key={index}>
-              <strong>{new Date(attempt.date).toLocaleString()}</strong>- Score:{' '}
-              {attempt.score}/{attempt.total}
+              <strong>{new Date(attempt.date).toLocaleString()}</strong> -
+              Score: {attempt.score}/{attempt.total}
             </li>
           ))}
         </ul>
       )}
 
-      <a href='/'>Take Another Quiz</a>
+      <Link to='/'>
+        <button className='button'>Take Another Quiz</button>
+      </Link>
     </div>
   )
 }
