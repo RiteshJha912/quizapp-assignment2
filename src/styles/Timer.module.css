@@ -1,41 +1,54 @@
-.timer {
+.timerContainer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timerCircle {
+    transform: rotate(-90deg);
+}
+
+.timerBackground {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 8;
+}
+
+.timerProgress {
+    fill: none;
+    stroke: #ff4d4d;
+    stroke-width: 8;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timerText {
+    position: absolute;
     font-size: 22px;
     font-weight: bold;
     color: #ff4d4d;
-    background: #fff3f3;
-    padding: 8px 15px;
-    border-radius: 8px;
-    display: inline-block;
-    box-shadow: 0px 2px 8px rgba(255, 77, 77, 0.2);
-    transition: color 0.3s ease, background 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Flashing effect when time is critical (last 5 seconds) */
+/* Blinking effect when time is critical */
 @keyframes blink {
-    0% {
+
+    0%,
+    100% {
         color: #ff4d4d;
-        background: #fff3f3;
     }
 
     50% {
         color: white;
-        background: #ff4d4d;
-    }
-
-    100% {
-        color: #ff4d4d;
-        background: #fff3f3;
     }
 }
 
 .critical {
     animation: blink 1s infinite;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .timer {
-        font-size: 18px;
-        padding: 6px 12px;
-    }
+    font-size: 24px;
+    font-weight: bold;
 }

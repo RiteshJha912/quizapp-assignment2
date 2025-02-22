@@ -25,23 +25,40 @@ import styles from '../styles/Timer.module.css'
 
 function Timer({ duration, onTimeout }) {
   const [timeLeft, setTimeLeft] = useState(duration)
+  const percentage = (timeLeft / duration) * 100
 
   useEffect(() => {
     if (timeLeft === 0) {
-      onTimeout() // Call the provided timeout function when the countdown ends
+      onTimeout()
       return
     }
 
-    // Set a timeout to decrease the time left by 1 every second
     const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000)
-
-    return () => clearTimeout(timer) // Cleanup function to avoid memory leaks
+    return () => clearTimeout(timer)
   }, [timeLeft, onTimeout])
 
   return (
-    <h3 className={`${styles.timer} ${timeLeft <= 5 ? styles.critical : ''}`}>
-      Time Left: {timeLeft}s
-    </h3>
+    <div className={styles.timerContainer}>
+      <svg className={styles.timerCircle} width='100' height='100'>
+        <circle cx='50' cy='50' r='40' className={styles.timerBackground} />
+        <circle
+          cx='50'
+          cy='50'
+          r='40'
+          className={styles.timerProgress}
+          style={{
+            strokeDashoffset: `calc(251 - (251 * ${percentage}) / 100)`,
+          }}
+        />
+      </svg>
+      <div
+        className={`${styles.timerText} ${
+          timeLeft <= 5 ? styles.critical : ''
+        }`}
+      >
+        {timeLeft}s
+      </div>
+    </div>
   )
 }
 
