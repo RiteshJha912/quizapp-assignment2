@@ -2,11 +2,11 @@
 
 A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a **timer**, tracks scores, and stores quiz history.
 
-###  Live Demo : https://dacoid-quizapp.vercel.app/
+###  🔗 Live Demo : https://dacoid-quizapp.vercel.app/
 
 ---
 
-## Features
+## 📋 Features
 
 **Interactive Quiz Flow**: Users can start a quiz, answer questions, and receive instant feedback.   
 **Multiple Question Types**: Supports multiple-choice and text-input questions.   
@@ -21,10 +21,10 @@ A simple quiz application built with **React** that supports **multiple-choice**
 **Auto-Saving Results**: Quiz results are automatically saved to local storage for future reference.    
 **Input Reset on Question Change**: Ensures smooth user experience when switching questions.    
 **Custom Styled Components**: Uses modular CSS for a polished, professional UI.  
-  
+
 ---
 
-##  Installation & Running Locally
+## ⚙️ Installation & Running Locally
 
 ### **Clone the Repository**
 ```
@@ -45,7 +45,7 @@ npm run dev
 Then, open http://localhost:5173/ in your browser.
 
 ---
-##  Folder Structure
+## 🗂️ Folder Structure
 ```
 quiz-app/
 │── public/
@@ -81,7 +81,7 @@ quiz-app/
 │── vite.config.js
 ```
 
-## Libraries Used
+## 📦 Libraries Used
 **Core React Libraries**    
 react – Core library for building UI components.    
 react-dom – Allows React to render components in the DOM.   
@@ -97,11 +97,11 @@ react-icons – Includes various icons, such as play and history icons for navig
 **Styling**    
 css-modules – Used for component-specific styling with .module.css files.     
 
-**Data Handling & Storage**
+**Data Handling & Storage**    
 fetch API (built-in) – Used to load quiz questions from a JSON file.    
 localStorage (built-in) – Saves past quiz results for later review.    
 
 
-## Wanna Collaborate?
+## 💼 Wanna Collaborate?
 Have ideas to improve Taskify-V2? Let's make it even better together!     
 Drop me a message at ritesh.exe@proton.me 
