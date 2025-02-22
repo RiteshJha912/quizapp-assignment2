@@ -6,7 +6,7 @@ a {
 
 .container {
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #ffffff;
     min-height: 80vh;
     display: flex;
@@ -19,6 +19,7 @@ a {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
     margin: 30px;
+    margin-bottom: 60px;
 }
 
 

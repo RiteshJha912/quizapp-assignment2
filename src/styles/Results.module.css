@@ -14,12 +14,9 @@ body {
     max-width: 550px;
     /* Slightly reduced width */
     width: 90%;
-    height: 90vh;
-    /* Reduced height */
+    height: 85vh;
     margin: 20px auto 0;
-    /* Added margin-top */
-    padding: 60px 30px 20px;
-    /* Adjusted padding */
+    padding: 60px 30px 15px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
