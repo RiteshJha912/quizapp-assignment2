@@ -20,7 +20,8 @@ A simple quiz application built with **React** that supports **multiple-choice**
 **Dynamic Toast Notifications**: Real-time feedback using toast messages based on user performance.   
 **Auto-Saving Results**: Quiz results are automatically saved to local storage for future reference.    
 **Input Reset on Question Change**: Ensures smooth user experience when switching questions.    
-**Custom Styled Components**: Uses modular CSS for a polished, professional UI.    
+**Custom Styled Components**: Uses modular CSS for a polished, professional UI.  
+  
 ---
 
 ##  Installation & Running Locally
