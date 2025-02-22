@@ -15,10 +15,10 @@ body {
     /* Slightly reduced width */
     width: 90%;
     height: 75vh;
-    margin: 20px auto 0;
+    margin: 12px auto 0;
     padding: 60px 30px 15px;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
