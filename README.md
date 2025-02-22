@@ -1,12 +1,12 @@
-# 🧠 Quiz App
+# Quiz App
 
 A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a **timer**, tracks scores, and stores quiz history.
 
-### 🌍 Live Demo : 
+### 🌍 Live Demo : https://dacoid-quizapp.vercel.app/
 
 ---
 
-## ✨ Features
+## Features
 
 - **Multiple Question Types:** Supports MCQs and integer-type questions.
 - **Timer for Each Question:** Customizable countdown timer (default 30s).
@@ -19,18 +19,18 @@ A simple quiz application built with **React** that supports **multiple-choice**
 
 ## 🛠️ Installation & Running Locally
 
-### 1️⃣ **Clone the Repository**
+### **Clone the Repository**
 ```
 git clone https://github.com/RiteshJha912/quizapp-assignment2.git
 cd quiz-app
 ```
 
-2️⃣ Install Dependencies
+### Install Dependencies
 ```
 npm install
 ```
 
-3️⃣ Run the App
+### Run the App
 ```
 npm run dev
 ```
