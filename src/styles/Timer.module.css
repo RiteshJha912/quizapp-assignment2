@@ -34,7 +34,6 @@
     transition: color 0.3s ease-in-out;
 }
 
-/* Blinking effect when time is critical */
 @keyframes blink {
 
     0%,

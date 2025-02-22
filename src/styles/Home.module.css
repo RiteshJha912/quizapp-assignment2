@@ -1,17 +1,13 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&family=Titillium+Web:wght@300;400;700&family=Arsenal+SC&display=swap');
 
-/* Remove underline from links */
 a {
     text-decoration: none;
 }
 
-/* Container */
 .container {
     text-align: center;
     padding: 20px;
     background-color: #ffffff;
-    /* Solid background (full opacity) */
     min-height: 80vh;
     display: flex;
     flex-direction: column;
@@ -19,10 +15,8 @@ a {
     align-items: center;
     margin-top: -60px;
     font-family: 'Ubuntu', sans-serif;
-    /* Default font */
     border-radius: 40px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    /* Elevated effect */
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
     margin: 30px;
 }
@@ -37,7 +31,6 @@ a {
     font-family: 'Titillium Web', sans-serif;
 }
 
-/* Subtitle */
 .subtitle {
     font-size: 18px;
     color: #666;
@@ -45,7 +38,6 @@ a {
     font-family: 'Titillium Web', sans-serif;
 }
 
-/* Button Group */
 .buttonGroup {
     display: flex;
     gap: 15px;
@@ -53,8 +45,7 @@ a {
     justify-content: center;
 }
 
-/* Buttons */
-/* Buttons */
+
 .button {
     display: flex;
     align-items: center;
@@ -64,7 +55,6 @@ a {
     height: 55px;
     padding: 0;
     background: linear-gradient(135deg, #3a3a3a, #5a5a5a);
-    /* Gradient background */
     color: white;
     border: none;
     cursor: pointer;
@@ -74,22 +64,18 @@ a {
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
     font-family: 'Arsenal SC', sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Soft initial shadow */
 }
 
 .button:hover {
     background: linear-gradient(135deg, #2a2a2a, #4a4a4a);
-    /* Darker gradient on hover */
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    /* Smooth glowing shadow */
 }
-/* Icons */
+
 .icon {
     font-size: 22px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
     .buttonGroup {
         flex-direction: column;

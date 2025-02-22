@@ -64,7 +64,6 @@
     transform: translateX(5px);
 }
 
-/* Start Quiz Button */
 .startButton {
     background: linear-gradient(135deg, #6a5acd, #483d8b);
     color: white;
@@ -84,7 +83,6 @@
     transform: scale(1.05);
 }
 
-/* Timer */
 .timer {
     font-size: 22px;
     font-weight: bold;
@@ -92,7 +90,6 @@
     margin-bottom: 20px;
 }
 
-/* Question Box */
 .questionBox {
     background: white;
     padding: 22px;
@@ -104,7 +101,6 @@
     transition: 0.3s ease-in-out;
 }
 
-/* Progress Bar */
 .progressBar {
     width: 90%;
     max-width: 500px;
@@ -121,14 +117,12 @@
     transition: width 0.4s ease-in-out;
 }
 
-/* Loading Message */
 .loading {
     font-size: 20px;
     color: #555;
     font-weight: bold;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .rulesContainer {
         max-width: 90%;

@@ -1,6 +1,5 @@
 body {
     background-color: #e5e5f7;
-    /* background-image: radial-gradient(#000000 0.5px, #e5e5f7 0.5px); */
     background-size: 10px 10px;
     opacity: 0.8;
     min-height: 100vh;
@@ -8,12 +7,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Ensures content is properly positioned */
 .pageContent {
     padding-top: 60px;
 }
 
-/* Home Button */
 .homeButton {
     position: fixed;
     top: 25px;
@@ -31,7 +28,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Responsive Navigation */
 @media (max-width: 600px) {
     .navContainer {
         align-items: center;

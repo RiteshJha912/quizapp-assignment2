@@ -122,7 +122,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Scrollbar Styling */
 .historyWrapper::-webkit-scrollbar {
     width: 8px;
 }
@@ -142,7 +141,6 @@ body {
     background: #6a5acd;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
     .resultsContainer {
         max-width: 90%;
