@@ -39,14 +39,14 @@
     font-size: 16px;
     border: none;
     border-radius: 6px;
-    background: #007bff;
+    background: #4a4a4a;
     color: white;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .resultActions button:hover {
-    background: #0056b3;
+    background: #222;
 }
 
 .resultActions button:nth-child(2) {

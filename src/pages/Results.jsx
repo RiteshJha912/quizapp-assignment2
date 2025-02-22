@@ -1,5 +1,3 @@
-//src/pages/Results.jsx
-
 import { useEffect, useState } from 'react'
 import { getQuizHistory } from '../utils/db'
 import { Link } from 'react-router-dom'
@@ -18,23 +16,23 @@ function Results() {
 
   return (
     <div className={styles.resultsContainer}>
-      <h1>Quiz Results</h1>
+      <h1 className={styles.title}>Quiz Results</h1>
 
       {quizHistory.length === 0 ? (
         <p className={styles.noHistory}>No quiz attempts recorded yet.</p>
       ) : (
-        <ul className={styles.historyList}>
+        <div className={styles.historyWrapper}>
           {quizHistory.map((attempt, index) => (
-            <li key={index} className={styles.historyItem}>
-              <span className={styles.date}>
+            <div key={index} className={styles.historyItem}>
+              <div className={styles.date}>
                 {new Date(attempt.date).toLocaleString()}
-              </span>
-              <span className={styles.score}>
-                Score: {attempt.score}/{attempt.total}
-              </span>
-            </li>
+              </div>
+              <div className={styles.score}>
+                <strong>Score:</strong> {attempt.score}/{attempt.total}
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
 
       <Link to='/'>
