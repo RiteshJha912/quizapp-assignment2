@@ -1,6 +1,6 @@
 # Quiz App : Dacoid Digital
 
-A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a **timer**, tracks scores, and stores quiz history.
+A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a timer, tracks scores, and stores quiz history.
 
 ###  🔗 Live Demo : https://dacoid-quizapp.vercel.app/
 
