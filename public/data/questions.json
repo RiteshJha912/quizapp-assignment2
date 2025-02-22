@@ -5,7 +5,7 @@
     "options": ["A. Venus", "B. Mercury", "C. Earth", "D. Mars"],
     "correctAnswer": "B",
     "type": "mcq",
-    "time": 20
+    "time": 30
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "options": ["A. Stack", "B. Queue", "C. Tree", "D. Graph"],
     "correctAnswer": "B",
     "type": "mcq",
-    "time": 20
+    "time": 30
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "options": ["A. Python", "B. Java", "C. HTML", "D. C++"],
     "correctAnswer": "C",
     "type": "mcq",
-    "time": 20
+    "time": 30
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "options": ["A. Au", "B. Gd", "C. Ag", "D. Pt"],
     "correctAnswer": "A",
     "type": "mcq",
-    "time": 20
+    "time": 30
   },
   {
     "id": 5,
@@ -37,41 +37,41 @@
     "options": ["A. Fractional distillation", "B. Cracking", "C. Polymerization", "D. Filtration"],
     "correctAnswer": "D",
     "type": "mcq",
-    "time": 20
+    "time": 60
   },
   {
     "id": 6,
     "question": "What is the value of 12 + 28?",
     "correctAnswer": "40",
     "type": "integer",
-    "time": 20
+    "time": 30
   },
   {
     "id": 7,
     "question": "How many states are there in the United States?",
     "correctAnswer": "50",
     "type": "integer",
-    "time": 20
+    "time": 60
   },
   {
     "id": 8,
     "question": "In which year was the Declaration of Independence signed?",
     "correctAnswer": "1776",
     "type": "integer",
-    "time": 20
+    "time": 30
   },
   {
     "id": 9,
     "question": "What is the value of pi rounded to the nearest integer?",
     "correctAnswer": "3",
     "type": "integer",
-    "time": 20
+    "time": 30
   },
   {
     "id": 10,
     "question": "If a car travels at 60 mph for 2 hours, how many miles does it travel?",
     "correctAnswer": "120",
     "type": "integer",
-    "time": 20
+    "time": 60
   }
 ]
