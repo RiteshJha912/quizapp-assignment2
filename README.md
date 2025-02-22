@@ -8,7 +8,6 @@ A simple quiz application built with **React** that supports **multiple-choice**
 
 ## Features
 
-### Basic Features:    
 **Interactive Quiz Flow**: Users can start a quiz, answer questions, and receive instant feedback.   
 **Multiple Question Types**: Supports multiple-choice and text-input questions.   
 **Real-Time Timer**: Countdown for each question, enforcing time-based challenges.   
@@ -17,7 +16,6 @@ A simple quiz application built with **React** that supports **multiple-choice**
 **Progress Bar**: Shows how far the user has progressed in the quiz.    
 **Basic Navigation**: Users can start a new quiz or view past results.      
 
-### Unique Features:   
 **Confetti Celebration** 🎉: A confetti animation appears if the user gets a perfect score.   
 **Dynamic Toast Notifications**: Real-time feedback using toast messages based on user performance.   
 **Auto-Saving Results**: Quiz results are automatically saved to local storage for future reference.    
@@ -83,7 +81,7 @@ quiz-app/
 ```
 
 ## Libraries Used
-**Core React Libraries**
+**Core React Libraries**    
 react – Core library for building UI components.    
 react-dom – Allows React to render components in the DOM.   
 react-router-dom – Enables client-side routing for navigation.   
@@ -103,6 +101,6 @@ fetch API (built-in) – Used to load quiz questions from a JSON file.
 localStorage (built-in) – Saves past quiz results for later review.    
 
 
-### Wanna Collaborate?
+## Wanna Collaborate?
 Have ideas to improve Taskify-V2? Let's make it even better together!     
 Drop me a message at ritesh.exe@proton.me 
