@@ -2,7 +2,7 @@
 
 A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a **timer**, tracks scores, and stores quiz history.
 
-### 🌍 Live Demo : https://dacoid-quizapp.vercel.app/
+###  Live Demo : https://dacoid-quizapp.vercel.app/
 
 ---
 
@@ -17,7 +17,7 @@ A simple quiz application built with **React** that supports **multiple-choice**
 
 ---
 
-## 🛠️ Installation & Running Locally
+##  Installation & Running Locally
 
 ### **Clone the Repository**
 ```
@@ -38,7 +38,7 @@ npm run dev
 Then, open http://localhost:5173/ in your browser.
 
 ---
-## 📂 Folder Structure
+##  Folder Structure
 ```
 quiz-app/
 │── public/
