@@ -1,8 +1,75 @@
-# React + Vite
+# 🧠 Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a **timer**, tracks scores, and stores quiz history.
 
-Currently, two official plugins are available:
+### 🌍 Live Demo : 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## ✨ Features
+
+- **Multiple Question Types:** Supports MCQs and integer-type questions.
+- **Timer for Each Question:** Customizable countdown timer (default 30s).
+- **Automatic Input Reset:** Clears input fields when switching questions.
+- **Quiz Results Page:** Displays results for each attempt separately.
+- **Persistent History:** Saves past quiz attempts using IndexedDB.
+- **Progress Tracking:** Shows real-time quiz progress.
+
+---
+
+## 🛠️ Installation & Running Locally
+
+### 1️⃣ **Clone the Repository**
+```
+git clone https://github.com/RiteshJha912/quizapp-assignment2.git
+cd quiz-app
+```
+
+2️⃣ Install Dependencies
+```
+npm install
+```
+
+3️⃣ Run the App
+```
+npm run dev
+```
+
+Then, open http://localhost:5173/ in your browser.
+
+---
+## 📂 Folder Structure
+```
+quiz-app/
+│── public/
+│   ├── data/
+│   │   ├── questions.json
+│── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ProgressBar.jsx
+│   │   ├── Question.jsx
+│   │   ├── QuizResult.jsx
+│   │   ├── Timer.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Quiz.jsx
+│   │   ├── Results.jsx
+│   ├── styles/
+│   │   ├── App.module.css
+│   │   ├── global.css
+│   │   ├── Home.module.css
+│   │   ├── Progressbar.module.css
+│   │   ├── Question.module.css
+│   │   ├── Quiz.module.css
+│   │   ├── QuizResult.module.css
+│   │   ├── Results.module.css
+│   │   ├── Timer.module.css
+│   ├── utils/
+│   │   ├── db.js
+│   ├── App.jsx
+│   ├── Main.jsx
+│── README.md
+│── package.json
+│── vite.config.js
+```
