@@ -22,9 +22,9 @@ const QuizResult = ({ score, total }) => {
       }
     }
 
-    const timeout = setTimeout(showToast, 100) // Delay to prevent double firing
+    const timeout = setTimeout(showToast, 100) 
 
-    return () => clearTimeout(timeout) // Cleanup to prevent duplicate calls
+    return () => clearTimeout(timeout) 
   }, [score, total])
 
   return (

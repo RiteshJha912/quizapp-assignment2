@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&family=Titillium+Web:wght@300;400;700&family=Arsenal+SC&display=swap');
+
 /* Container */
 .container {
     text-align: center;
@@ -9,6 +12,8 @@
     justify-content: center;
     align-items: center;
     margin-top: -60px;
+    font-family: 'Ubuntu', sans-serif;
+    /* Default font */
 }
 
 /* Title */
@@ -17,6 +22,7 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 /* Subtitle */
@@ -24,6 +30,7 @@
     font-size: 18px;
     color: #666;
     margin-bottom: 25px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 /* Button Group */
@@ -34,33 +41,37 @@
     justify-content: center;
 }
 
-/* Perfectly Standard Button */
+/* Buttons */
+/* Buttons */
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: 220px;
-    /* Fixed width */
     height: 55px;
-    /* Fixed height */
     padding: 0;
-    /* Remove extra padding */
-    background-color: #4a4a4a;
+    background: linear-gradient(135deg, #3a3a3a, #5a5a5a);
+    /* Gradient background */
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: 'Arsenal SC', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Soft initial shadow */
 }
 
 .button:hover {
-    background-color: #222;
+    background: linear-gradient(135deg, #2a2a2a, #4a4a4a);
+    /* Darker gradient on hover */
     transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    /* Smooth glowing shadow */
 }
-
 /* Icons */
 .icon {
     font-size: 22px;
@@ -76,6 +87,5 @@
 
     .button {
         width: 250px;
-        /* Same width for mobile */
     }
 }
