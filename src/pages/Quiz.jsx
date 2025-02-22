@@ -95,18 +95,26 @@ const Quiz = () => {
   if (!quizStarted) {
     return (
       <div className={styles.rulesContainer}>
-        <h2>Quiz Rules</h2>
-        <ul className={styles.rulesList}>
-          <li>You have limited time for each question.</li>
-          <li>Once you submit an answer, you can't go back.</li>
-          <li>Each correct answer gives you 1 point.</li>
-          <li>If time runs out, you lose the chance to answer.</li>
-        </ul>
+        <h2 className={styles.rulesTitle}>📜 Quiz Rules</h2>
+        <div className={styles.rulesList}>
+          <div className={styles.ruleItem}>
+            ⏳ <span>You have limited time for each question, which varies based on the difficulty of the question.</span>
+          </div>
+          <div className={styles.ruleItem}>
+            🚫 <span>Once you submit an answer, you can't go back.</span>
+          </div>
+          <div className={styles.ruleItem}>
+            ✅ <span>Each correct answer gives you 1 point.</span>
+          </div>
+          <div className={styles.ruleItem}>
+            ⏰ <span>If time runs out, you lose the chance to answer.</span>
+          </div>
+        </div>
         <button
           className={styles.startButton}
           onClick={() => setQuizStarted(true)}
         >
-          Start Quiz
+          Let's GO!!
         </button>
       </div>
     )

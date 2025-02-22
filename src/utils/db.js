@@ -40,3 +40,13 @@ export const getQuizHistory = async () => {
     request.onsuccess = () => resolve(request.result || [])
   })
 }
+
+// Clear all quiz history
+export const clearQuizHistory = async () => {
+  const db = await openDB()
+  const tx = db.transaction('quizResults', 'readwrite')
+  const store = tx.objectStore('quizResults')
+  
+  store.clear()
+  return tx.complete
+}
