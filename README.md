@@ -80,7 +80,7 @@ quiz-app/
 │── package.json
 │── vite.config.js
 ```
-
+---
 ## 📦 Libraries Used
 **Core React Libraries**    
 react – Core library for building UI components.    
@@ -101,7 +101,7 @@ css-modules – Used for component-specific styling with .module.css files.
 fetch API (built-in) – Used to load quiz questions from a JSON file.    
 localStorage (built-in) – Saves past quiz results for later review.    
 
-
+---
 ## 💼 Wanna Collaborate?
 Have ideas to improve this project? Let's make it even better together!     
 Drop me a message at ritesh.exe@proton.me 
