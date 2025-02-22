@@ -1,0 +1,46 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #222;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navLink:hover {
+    color: gray;
+}
+
+/* Add space below navbar so content isn’t hidden */
+.pageContent {
+    padding-top: 60px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 600px) {
+    .navContainer {
+        /* flex-direction: column;  */
+        align-items: center;
+    }
+
+    .navLink {
+        padding: 10px 0;
+    }
+}

@@ -1,6 +1,9 @@
+//src/pages/Results.jsx
+
 import { useEffect, useState } from 'react'
 import { getQuizHistory } from '../utils/db'
 import { Link } from 'react-router-dom'
+import styles from '../styles/Results.module.css'
 
 function Results() {
   const [quizHistory, setQuizHistory] = useState([])
@@ -8,30 +11,34 @@ function Results() {
   useEffect(() => {
     async function fetchHistory() {
       const history = await getQuizHistory()
-      setQuizHistory(history.reverse()) // Show latest attempt first
+      setQuizHistory(history.reverse())
     }
     fetchHistory()
   }, [])
 
   return (
-    <div className='results-container'>
+    <div className={styles.resultsContainer}>
       <h1>Quiz Results</h1>
 
       {quizHistory.length === 0 ? (
-        <p>No quiz attempts recorded yet.</p>
+        <p className={styles.noHistory}>No quiz attempts recorded yet.</p>
       ) : (
-        <ul>
+        <ul className={styles.historyList}>
           {quizHistory.map((attempt, index) => (
-            <li key={index}>
-              <strong>{new Date(attempt.date).toLocaleString()}</strong> -
-              Score: {attempt.score}/{attempt.total}
+            <li key={index} className={styles.historyItem}>
+              <span className={styles.date}>
+                {new Date(attempt.date).toLocaleString()}
+              </span>
+              <span className={styles.score}>
+                Score: {attempt.score}/{attempt.total}
+              </span>
             </li>
           ))}
         </ul>
       )}
 
       <Link to='/'>
-        <button className='button'>Take Another Quiz</button>
+        <button className={styles.button}>Take Another Quiz</button>
       </Link>
     </div>
   )

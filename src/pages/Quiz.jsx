@@ -1,8 +1,11 @@
+//src/pages/Quiz.jsx
+
 import React, { useEffect, useState } from 'react'
 import Question from '../components/Question'
 import Timer from '../components/Timer'
 import QuizResult from '../components/QuizResult'
 import { saveQuizResult } from '../utils/db'
+import styles from '../styles/Quiz.module.css'
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([])
@@ -24,10 +27,9 @@ const Quiz = () => {
     fetchQuestions()
   }, [])
 
-  // ✅ Reset input field when a new question is loaded
   useEffect(() => {
     setUserInput('')
-  }, [currentIndex]) // Runs every time currentIndex changes
+  }, [currentIndex])
 
   const handleAnswer = (questionId, userAnswer) => {
     const currentQuestion = questions[currentIndex]
@@ -48,9 +50,8 @@ const Quiz = () => {
     }
   }
 
-  // Handle timeout when time runs out
   const handleTimeout = () => {
-    handleAnswer(questions[currentIndex]?.id, null) // Auto-submit as incorrect
+    handleAnswer(questions[currentIndex]?.id, null)
   }
 
   if (quizCompleted) {
@@ -58,10 +59,9 @@ const Quiz = () => {
   }
 
   return (
-    <div className='quiz-container'>
+    <div className={styles.quizContainer}>
       {questions.length > 0 ? (
         <>
-          {/* ✅ Key forces re-mount when currentIndex changes */}
           <Timer
             key={currentIndex}
             duration={questions[currentIndex]?.time || 30}
@@ -75,7 +75,7 @@ const Quiz = () => {
           />
         </>
       ) : (
-        <p>Loading...</p>
+        <p className={styles.loading}>Loading...</p>
       )}
     </div>
   )

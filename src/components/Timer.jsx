@@ -14,7 +14,11 @@ function Timer({ duration, onTimeout }) {
     return () => clearTimeout(timer)
   }, [timeLeft, onTimeout])
 
-  return <h3 className={styles.timer}>Time Left: {timeLeft}s</h3>
+  return (
+    <h3 className={`${styles.timer} ${timeLeft <= 5 ? styles.critical : ''}`}>
+      Time Left: {timeLeft}s
+    </h3>
+  )
 }
 
 export default Timer

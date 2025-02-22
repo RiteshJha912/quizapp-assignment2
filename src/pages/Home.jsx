@@ -1,5 +1,5 @@
-import styles from '../styles/Home.module.css'
 import { Link } from 'react-router-dom'
+import styles from '../styles/Home.module.css'
 
 function Home() {
   return (
@@ -8,9 +8,6 @@ function Home() {
       <div className={styles.buttonGroup}>
         <Link to='/quiz'>
           <button className={styles.button}>Start Quiz</button>
-        </Link>
-        <Link to='/results'>
-          <button className={styles.button}>View Score</button>
         </Link>
       </div>
     </div>

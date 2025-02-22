@@ -1,15 +1,27 @@
 import React from 'react'
+import { toast } from 'react-toastify' // Import toast
+import 'react-toastify/dist/ReactToastify.css'
+import styles from '../styles/Question.module.css'
 
 const Question = ({ question, onAnswer, userInput, setUserInput }) => {
+  const handleSubmit = () => {
+    if (!userInput.trim()) {
+      toast.error('Input cannot be empty! Enter a value to proceed.')
+      return
+    }
+    onAnswer(question.id, userInput)
+  }
+
   return (
-    <div className='question-container'>
-      <h2>{question.question}</h2>
+    <div className={styles.questionContainer}>
+      <h2 className={styles.questionText}>{question.question}</h2>
 
       {question.type === 'mcq' ? (
-        <div className='options'>
+        <div className={styles.options}>
           {question.options.map((option) => (
             <button
               key={option}
+              className={styles.option}
               onClick={() => onAnswer(question.id, option[0])}
             >
               {option}
@@ -17,13 +29,15 @@ const Question = ({ question, onAnswer, userInput, setUserInput }) => {
           ))}
         </div>
       ) : (
-        <div className='integer-input'>
+        <div className={styles.integerInput}>
           <input
             type='number'
+            className={styles.inputBox}
+            placeholder='' // ✅ Added placeholder
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button onClick={() => onAnswer(question.id, userInput)}>
+          <button className={styles.submitButton} onClick={handleSubmit}>
             Submit
           </button>
         </div>
