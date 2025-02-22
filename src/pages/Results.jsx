@@ -1,10 +1,35 @@
-import styles from '../styles/Results.module.css'
+import { useEffect, useState } from 'react'
+import { getQuizHistory } from '../utils/db'
 
 function Results() {
+  const [quizHistory, setQuizHistory] = useState([])
+
+  useEffect(() => {
+    async function fetchHistory() {
+      const history = await getQuizHistory()
+      setQuizHistory(history.reverse()) // Show the latest attempt first
+    }
+    fetchHistory()
+  }, [])
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Quiz Results</h1>
-      <p className={styles.scoreText}>Your score will be displayed here.</p>
+    <div className='results-container'>
+      <h1>Quiz Results</h1>
+
+      {quizHistory.length === 0 ? (
+        <p>No quiz attempts recorded yet.</p>
+      ) : (
+        <ul>
+          {quizHistory.map((attempt, index) => (
+            <li key={index}>
+              <strong>{new Date(attempt.date).toLocaleString()}</strong>- Score:{' '}
+              {attempt.score}/{attempt.total}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <a href='/'>Take Another Quiz</a>
     </div>
   )
 }

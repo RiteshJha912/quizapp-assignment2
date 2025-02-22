@@ -1,81 +1,59 @@
-import { useState } from 'react'
-import Question from '../components/Question'
-import Timer from '../components/Timer'
-import Scoreboard from '../components/scoreboard'
-import styles from '../styles/Quiz.module.css'
-
-const quizData = [
-  {
-    question: 'Which planet is closest to the Sun?',
-    options: ['Venus', 'Mercury', 'Earth', 'Mars'],
-    correct: 'Mercury',
-  },
-  {
-    question: 'Which data structure organizes items in a FIFO manner?',
-    options: ['Stack', 'Queue', 'Tree', 'Graph'],
-    correct: 'Queue',
-  },
-  {
-    question:
-      'Which of the following is primarily used for structuring web pages?',
-    options: ['Python', 'Java', 'HTML', 'C++'],
-    correct: 'HTML',
-  },
-  {
-    question: 'Which chemical symbol stands for Gold?',
-    options: ['Au', 'Gd', 'Ag', 'Pt'],
-    correct: 'Au',
-  },
-  {
-    question:
-      'Which of these processes is not typically involved in refining petroleum?',
-    options: [
-      'Fractional distillation',
-      'Cracking',
-      'Polymerization',
-      'Filtration',
-    ],
-    correct: 'Filtration',
-  },
-]
+import { useState, useEffect } from 'react'
 
 function Quiz() {
+  const [questions, setQuestions] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [score, setScore] = useState(0)
-  const [quizCompleted, setQuizCompleted] = useState(false)
-  const [showFeedback, setShowFeedback] = useState(false)
+  const [isCompleted, setIsCompleted] = useState(false)
 
-  const handleAnswer = (isCorrect) => {
-    if (isCorrect) setScore((prevScore) => prevScore + 1)
-    setShowFeedback(true)
-    setTimeout(() => {
-      setShowFeedback(false)
-      if (currentQuestion + 1 < quizData.length)
-        setCurrentQuestion((prev) => prev + 1)
-      else setQuizCompleted(true)
-    }, 1000)
-  }
+  useEffect(() => {
+    async function fetchQuestions() {
+      try {
+        const response = await fetch('/data/questions.json') // Correct path
+        if (!response.ok) {
+          throw new Error('Failed to fetch questions')
+        }
+        const data = await response.json()
+        setQuestions(data)
+      } catch (error) {
+        console.error('Error:', error)
+      }
+    }
+    fetchQuestions()
+  }, [])
 
-  const handleTimeout = () => {
-    setShowFeedback(false)
-    if (currentQuestion + 1 < quizData.length)
-      setCurrentQuestion((prev) => prev + 1)
-    else setQuizCompleted(true)
+
+  if (questions.length === 0) return <p>Loading questions...</p>
+
+  const handleAnswer = (index) => {
+    if (questions[currentQuestion].answer === index) {
+      setScore(score + 1)
+    }
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1)
+    } else {
+      setIsCompleted(true)
+    }
   }
 
   return (
-    <div className={styles.container}>
-      {quizCompleted ? (
-        <Scoreboard score={score} total={quizData.length} />
+    <div className='quiz-container'>
+      {isCompleted ? (
+        <h2>
+          Your final score: {score}/{questions.length}
+        </h2>
       ) : (
-        <div>
-          <Timer duration={30} onTimeout={handleTimeout} />
-          <Question
-            data={quizData[currentQuestion]}
-            onAnswer={handleAnswer}
-            showFeedback={showFeedback}
-          />
-        </div>
+        <>
+          <h2>{questions[currentQuestion].question}</h2>
+          <ul>
+            {questions[currentQuestion].options.map((option, index) => (
+              <li key={index} onClick={() => handleAnswer(index)}>
+                {option}
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   )

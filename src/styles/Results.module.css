@@ -1,24 +1,26 @@
-.container {
+.results-container {
     text-align: center;
-    padding: 20px;
-}
-
-.score {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.restartButton {
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
     margin-top: 20px;
 }
 
-.restartButton:hover {
-    background-color: darkgreen;
+.results-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results-container li {
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.results-container a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
