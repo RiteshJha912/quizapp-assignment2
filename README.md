@@ -1,4 +1,4 @@
-# Quiz App : Dacoid Digital
+# Quiz App (MCQ+Integer)
 
 A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a timer, tracks scores, and stores quiz history.
 
