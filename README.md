@@ -16,7 +16,7 @@ A simple quiz application built with **React** that supports **multiple-choice**
 **Progress Bar**: Shows how far the user has progressed in the quiz.    
 **Basic Navigation**: Users can start a new quiz or view past results.      
 
-**Confetti Celebration** 🎉: A confetti animation appears if the user gets a perfect score.   
+**Confetti Celebration** : A confetti animation appears if the user gets a perfect score.   
 **Dynamic Toast Notifications**: Real-time feedback using toast messages based on user performance.   
 **Auto-Saving Results**: Quiz results are automatically saved to local storage for future reference.    
 **Input Reset on Question Change**: Ensures smooth user experience when switching questions.    
