@@ -1,12 +1,11 @@
-# Quiz App (MCQ+Integer)
+# 🎯 Quizzo
+A sleek and interactive quiz application built with React. Quizzo supports multiple-choice and integer-type questions, features a countdown timer, progress tracking, and stores quiz history for review — all with a modern, responsive UI.
 
-A simple quiz application built with **React** that supports **multiple-choice** and **integer-type** questions. It features a timer, tracks scores, and stores quiz history.
-
-###  🔗 Live Demo : https://dacoid-quizapp.vercel.app/
+###   Live Demo : https://dacoid-quizapp.vercel.app/
 
 ---
 
-## 📋 Features
+##  Features
 
 **Interactive Quiz Flow**: Users can start a quiz, answer questions, and receive instant feedback.   
 **Multiple Question Types**: Supports multiple-choice and text-input questions.   
@@ -24,7 +23,7 @@ A simple quiz application built with **React** that supports **multiple-choice**
 
 ---
 
-## ⚙️ Installation & Running Locally
+## ⚙ Installation & Running Locally
 
 ### **Clone the Repository**
 ```
@@ -81,7 +80,7 @@ quiz-app/
 │── vite.config.js
 ```
 ---
-## 📦 Libraries Used
+##  Libraries Used
 **Core React Libraries**    
 react – Core library for building UI components.    
 react-dom – Allows React to render components in the DOM.   
