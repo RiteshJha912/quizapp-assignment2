@@ -1,7 +1,7 @@
 # 🎯 Quizzo
 A sleek and interactive quiz application built with React. Quizzo supports multiple-choice and integer-type questions, features a countdown timer, progress tracking, and stores quiz history for review — all with a modern, responsive UI.
 
-###   Live Demo : https://dacoid-quizapp.vercel.app/
+###  Live Demo : https://dacoid-quizapp.vercel.app/
 
 ---
 
@@ -23,7 +23,7 @@ A sleek and interactive quiz application built with React. Quizzo supports multi
 
 ---
 
-## ⚙ Installation & Running Locally
+## Installation & Running Locally
 
 ### **Clone the Repository**
 ```
